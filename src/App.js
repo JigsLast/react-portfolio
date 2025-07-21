@@ -6,29 +6,19 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import { ThemeProvider } from "./ThemeContext"; // import this
-
-function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
-}
+import { ThemeProvider } from "./ThemeContext"; // for dark mode
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
         <Navbar />
-        <Routes> ... </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
         <Footer />
       </Router>
     </ThemeProvider>

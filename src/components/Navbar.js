@@ -1,32 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Navbar as RBNavbar, Nav, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { useContext } from "react";
 import { ThemeContext } from "../ThemeContext";
 
-const Navigation = () => {
+const Navbar = () => {
+  const { toggleTheme, darkMode } = useContext(ThemeContext); // ✅ moved inside
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
+    <RBNavbar bg={darkMode ? "dark" : "light"} variant={darkMode ? "dark" : "light"} expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">Jigyansu Swain</Navbar.Brand>
-        <Navbar.Toggle />
-        <Navbar.Collapse>
-          <Nav className="ms-auto">
+        <RBNavbar.Brand as={Link} to="/">Portfolio</RBNavbar.Brand>
+        <RBNavbar.Toggle aria-controls="basic-navbar-nav" />
+        <RBNavbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/projects">Projects</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           </Nav>
-        </Navbar.Collapse>
+          <Button variant="outline-primary" onClick={toggleTheme}>
+            {darkMode ? "☀️ Light" : "🌙 Dark"}
+          </Button>
+        </RBNavbar.Collapse>
       </Container>
-    </Navbar>
+    </RBNavbar>
   );
 };
 
-const { toggleTheme, darkMode } = useContext(ThemeContext);
-
-<Button variant="outline-light" onClick={toggleTheme} className="ms-3">
-  {darkMode ? "☀️ Light" : "🌙 Dark"}
-</Button>
-
-export default Navigation;
+export default Navbar;

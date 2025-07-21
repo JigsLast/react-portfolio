@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import { ThemeProvider } from "./ThemeContext"; // import this
 
 function App() {
   return (
@@ -19,6 +20,18 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <Router>
+        <Navbar />
+        <Routes> ... </Routes>
+        <Footer />
+      </Router>
+    </ThemeProvider>
   );
 }
 

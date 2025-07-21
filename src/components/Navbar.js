@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import { useContext } from "react";
+import { ThemeContext } from "../ThemeContext";
 
 const Navigation = () => {
   return (
@@ -20,5 +22,11 @@ const Navigation = () => {
     </Navbar>
   );
 };
+
+const { toggleTheme, darkMode } = useContext(ThemeContext);
+
+<Button variant="outline-light" onClick={toggleTheme} className="ms-3">
+  {darkMode ? "☀️ Light" : "🌙 Dark"}
+</Button>
 
 export default Navigation;

@@ -8,4 +8,12 @@ const Home = () => (
   </Container>
 );
 
+<Button
+  variant="outline-primary"
+  href="/Jigyansu_Swain_Resume.pdf"
+  download
+>
+  Download Resume
+</Button>
+
 export default Home;

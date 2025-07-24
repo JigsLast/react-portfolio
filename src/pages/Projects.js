@@ -17,10 +17,10 @@ const Projects = () => {
         </Col>
         <Col md={6}>
           <ProjectCard
-            title="Restaurant Management System"
-            description="Python + JS based app to manage restaurant bookings and orders."
-            tech="Python, JavaScript, SQL"
-            codeLink="https://github.com/yourusername/restaurant-manager"
+            title="Exam Registration Portal"
+            description="A full-stack exam registration system with React forms, Flask API, MongoDB storage, and real-time validation."
+            tech="Python/Flask, React JS, MongoDB"
+            codeLink="https://github.com/JigsLast/college-exam-registration"
           />
         </Col>
         {/* Add more cards here */}
